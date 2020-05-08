@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :events, only: [:new, :index, :show]
+  resources :events
   root to: 'events#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

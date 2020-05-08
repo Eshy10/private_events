@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   include SessionsHelper
+  before_action :logged_in?, only: [:create, :show, :new]
   
     def new
       @user = User.new
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
         log_in @user
         redirect_to @user
       else
-        render 'new'
+        render :new
       end
     end
     

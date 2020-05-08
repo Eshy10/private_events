@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_123455) do
     t.date "date"
     t.integer "creator_id"
     t.text "description"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

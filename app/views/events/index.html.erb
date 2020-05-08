@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Welcome !!! </h1>
+    <% @events.each do |event| %>
+        <p><%= event.date %></p>
+        <p><%= event.location %></p>
+        <p><%= event.description %></p>
+        <p><%= link_to event.description, event_path(event), class: 'event_description' %> </p>
+        <hr>
+    <% end %>
+
+    <% if current_user %>
+        <%= link_to 'new event', new_event_path %>
+    <% end %>
+</div>
