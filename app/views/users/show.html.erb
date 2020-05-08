@@ -1,16 +1,13 @@
 <div class = "container">
 <div class = 'row'>
 <div class = 'col-4'>
-  <h1>Welcome !!! </h1>
-    <% @events.each do |event| %>
-        <p><%= event.date.to_date %></p>
-        <p><%= event.title %></p>
-        <p><%= event.location %></p>
-        <p><%= event.description %></p>
-        <p><%= event.creator.name %></p>
-        <p><%= link_to event.description, event_path(event), class: 'event_description' %> </p>
-        <hr>
-    <% end %>
+<% @user.created_events.each do |event| %>
+<h1>Events created by host: <%= event.creator.name %></h1>
+<p>Date: <%= event.date %></p>
+<p>Title: <%= event.title %></p>
+<p>Description: <%= event.description %></p>
+<p>Location: <%= event.location %></p>
+<% end %>
 </div>
 <div class = 'col-4'>
 <h1>Upcoming events</h1>
@@ -32,6 +29,3 @@
 </div>
 </div>
 </div>
- <% if current_user %>
-        <%= link_to 'new event', new_event_path %>
- <% end %>

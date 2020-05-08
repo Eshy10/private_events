@@ -3,6 +3,8 @@
         <%= form_with(model: @event, local: true) do |f| %>
         <%= f.label :date %>
         <%= f.date_field :date, class: "form-control" %>
+         <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
         <%= f.label :location %>
         <%= f.text_field :location, class: "form-control" %>
         <%= f.label :description %>
