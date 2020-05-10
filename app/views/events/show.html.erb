@@ -1,12 +1,12 @@
-<div class="container">
-    <h1>Event(s)</h1>
-        <p>Event created by: <%= @event.creator.name %></p>
+<div class="container text-center card">
+   <h1>Title:<%= @event.title %></h1>
+        <h3 class = 'text-muted'>Host: <%= @event.creator.name %></h3>
         <h1>Attendee:</h1>
         <% @attendees.each do |attendee| %>
         <p><%= attendee.name %></p>
         <% end %>
     <hr>
-    <p><%= link_to 'new event', new_event_path %></p>
-    <p><%= link_to 'home', root_path %></p>
+    <p><%= link_to 'New event', new_event_path, class: 'btn btn-success' %></p>
+    <p><%= link_to 'Home', root_path, class: 'btn btn-warning' %></p>
 </div>
 

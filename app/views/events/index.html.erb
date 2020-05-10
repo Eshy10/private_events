@@ -1,37 +1,35 @@
-<div class = "container">
+<div class = "container mt-3">
+ <% if current_user %>
+    <%= link_to 'Create new event', new_event_path, class: 'btn btn-success mb-2' %>
+ <% end %>
 <div class = 'row'>
-<div class = 'col-4'>
-  <h1>Welcome !!! </h1>
+<div class = 'col-6 card p-3 text-center'>
+  <h3>All events</h1>
     <% @events.each do |event| %>
-        <p><%= event.date.to_date %></p>
-        <p><%= event.title %></p>
-        <p><%= event.location %></p>
-        <p><%= event.description %></p>
-        <p><%= event.creator.name %></p>
-        <p><%= link_to event.description, event_path(event), class: 'event_description' %> </p>
+        <p><strong>Date:</strong> <%= event.date.to_date %></p>
+        <p><strong>Title:</strong> <%= event.title %></p>
+        <p><strong>Description:</strong> <%= event.description %></p>
+        <p><strong>Location:</strong> <%= event.location %></p>
+        <p><strong>Host:</strong> <%= event.creator.name %></p>
+        <p><%= link_to 'Check attendee here', event_path(event), class: 'btn btn-warning' %> </p>
         <hr>
     <% end %>
 </div>
-<div class = 'col-4'>
-<h1>Upcoming events</h1>
+<div class = 'col-6 card p-3 text-center'>
+<h3>Upcoming events</h1>
 <% @upcoming_events.each do |event| %>
-<h1>Events created by host: <%= event.creator.name %></h1>
-<p>Date: <%= event.date %></p>
-<p>Title: <%= event.title %></p>
-<p>Location: <%= event.location %></p>
+<h3 class= "text-muted">host: <%= event.creator.name %></h1>
+<p><strong>Date:</strong> <%= event.date %></p>
+<p><strong>Title:</strong> <%= event.title %></p>
+<p><strong>Location:</strong> <%= event.location %></p>
 <% end %>
-</div>
-<div class = 'col-4'>
-<h1>Past Events</h1>
+<hr>
+<h3>Past Events</h1>
 <% @previous_events.each do |event| %>
-<h1>Events created by host: <%= event.creator.name %></h1>
-<p>Date: <%= event.date %></p>
-<p>Title: <%= event.title %></p>
-<p>Location: <%= event.location %></p>
+<h3 class= "text-muted">host: <%= event.creator.name %></h1>
+<p><strong>Date:</strong> <%= event.date %></p>
+<p><strong>Title:</strong> <%= event.title %></p>
+<p><strong>Location:</strong> <%= event.location %></p>
 <% end %>
 </div>
 </div>
-</div>
- <% if current_user %>
-        <%= link_to 'new event', new_event_path %>
- <% end %>
