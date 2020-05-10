@@ -6,10 +6,10 @@
 <p><strong>Date:</strong> <%= event.date %></p>
 <p><strong>Title:</strong> <%= event.title %></p>
 <p><strong>Description:</strong> <%= event.description %></p>
-<p><strong>Location:</strong> <%= event.location %></p>
+<p class= "border-bottom border-success"><strong>Location:</strong> <%= event.location %></p>
 <% end %>
 </div>
-<div class = 'col-6'>
+<div class = 'col-6 border-left border-success'>
 <h3>Upcoming events</h1>
 <% @upcoming_events.each do |event| %>
 <h1>Events created by host: <%= event.creator.name %></h1>
