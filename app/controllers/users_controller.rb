@@ -19,6 +19,7 @@ class UsersController < ApplicationController
         log_in @user
         redirect_to root_path
       else
+        flash.now[:notice] = "Please enter your name"
         render :new
       end
     end

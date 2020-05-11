@@ -1,6 +1,7 @@
 <div class= "container">
     <h1>New Event</h1>
         <%= form_with(model: @event, local: true) do |f| %>
+        <%= render 'shared/error_messages' %>
         <%= f.label :date %>
         <%= f.date_field :date, class: "form-control" %>
          <%= f.label :title %>
