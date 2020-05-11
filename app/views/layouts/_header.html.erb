@@ -3,7 +3,7 @@
 <%= link_to "Private Event", root_path, class: "font-weight-bold text-white" %>
 <p class="navbar-text float-right">
 <% if logged_in? %>
- <span class= "text-white">My events:</span> <%= link_to current_user.name, user_path(current_user), :class => 'navbar-link'  %> 
+ <span class= "text-white">My events:</span> <%= link_to current_user.name.capitalize, user_path(current_user), :class => 'navbar-link'  %> 
   <%= link_to "Logout", logout_path, method: :delete, :class => 'navbar-link'  %>
 <% else %>
   <%= link_to "Sign up", signup_path, :class => 'navbar-link'  %> |

@@ -2,8 +2,8 @@
 <div class = 'row'>
 <div class = 'col-6'>
 <h1>Events you created:</h1>
-<% @user.created_events.each do |event| %>>
-<h3>created by <%= event.creator.name %></h1>
+<% @user.created_events.each do |event| %>
+<p><strong>Host:</strong> <%= event.creator.name.capitalize %></p>
 <p><strong>Date:</strong> <%= event.date %></p>
 <p><strong>Title:</strong> <%= event.title %></p>
 <p><strong>Description:</strong> <%= event.description %></p>

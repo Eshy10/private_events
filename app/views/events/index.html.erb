@@ -10,7 +10,7 @@
         <p><strong>Title:</strong> <%= event.title %></p>
         <p><strong>Description:</strong> <%= event.description %></p>
         <p><strong>Location:</strong> <%= event.location %></p>
-        <p><strong>Host:</strong> <%= event.creator.name %></p>
+        <p><strong>Host:</strong> <%= event.creator.name.capitalize %></p>
         <p><%= link_to 'Check attendee here', event_path(event), class: 'btn btn-warning' %> </p>
         <hr>
     <% end %>
@@ -18,18 +18,17 @@
 <div class = 'col-6 card p-3 text-center'>
 <h3>Upcoming events</h1>
 <% @upcoming_events.each do |event| %>
-<h3 class= "text-muted">host: <%= event.creator.name %></h1>
+<p><strong>Host:</strong> <%= event.creator.name.capitalize %></p>
 <p><strong>Date:</strong> <%= event.date %></p>
 <p><strong>Title:</strong> <%= event.title %></p>
-<p><strong>Location:</strong> <%= event.location %></p>
+<p class= "border-bottom border-success pb-3"><strong>Location:</strong> <%= event.location %></p>
 <% end %>
-<hr>
 <h3>Past Events</h1>
 <% @previous_events.each do |event| %>
-<h3 class= "text-muted">host: <%= event.creator.name %></h1>
+<p><strong>Host:</strong> <%= event.creator.name.capitalize %></p>
 <p><strong>Date:</strong> <%= event.date %></p>
 <p><strong>Title:</strong> <%= event.title %></p>
-<p><strong>Location:</strong> <%= event.location %></p>
+<p class= "border-bottom border-success pb-3"><strong>Location:</strong> <%= event.location %></p>
 <% end %>
 </div>
 </div>

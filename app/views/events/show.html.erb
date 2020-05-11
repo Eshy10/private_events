@@ -1,9 +1,9 @@
 <div class="container text-center card">
    <h1>Title:<%= @event.title %></h1>
-        <h3 class = 'text-muted'>Host: <%= @event.creator.name %></h3>
+        <h3>Host: <%= @event.creator.name.capitalize %></h3>
         <h1>Attendee:</h1>
         <% @attendees.each do |attendee| %>
-        <p><%= attendee.name %></p>
+        <p><%= attendee.name.capitalize %></p>
         <% end %>
     <hr>
     <% if current_user %>
