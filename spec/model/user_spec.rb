@@ -13,4 +13,10 @@ RSpec.describe User, :type => :model do
         subject.name = nil
         expect(subject).to_not be_valid
     end
+
+  describe "Associations" do
+    it { should have_many(:created_events) }
+    it { should have_many(:event_attendees) } 
+    it { should have_many(:attending_events) }  
+  end
 end
