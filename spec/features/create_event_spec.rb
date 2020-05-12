@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Creating an event', type: :feature do
-    let(:user) { User.create(name: 'Maggie') }
+  let(:user) { User.create(name: 'Maggie') }
 
   before(:each) do
-      visit login_path
-      fill_in 'session_name', with: user.name
-      click_button 'Log in'
-      expect(page).to have_content('Logged in!') 
+    visit login_path
+    fill_in 'session_name', with: user.name
+    click_button 'Log in'
+    expect(page).to have_content('Logged in!')
   end
 
   scenario 'valid inputs' do
@@ -31,7 +31,7 @@ RSpec.describe 'Creating an event', type: :feature do
     fill_in 'event_location', with: ''
     fill_in 'event_description', with: ''
     click_button 'Submit'
-    expect(page).to have_content("Date can't be blank" )
+    expect(page).to have_content("Date can't be blank")
     expect(page).to have_content("Title can't be blank")
     expect(page).to have_content("Location can't be blank")
     expect(page).to have_content("Description can't be blank")
