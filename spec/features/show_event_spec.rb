@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Showing an event', type: :feature do
-    let(:user) { User.create(name: 'Maggie') }
+  let(:user) { User.create(name: 'Maggie') }
 
   before(:each) do
-      visit login_path
-      fill_in 'session_name', with: user.name
-      click_button 'Log in'
-      expect(page).to have_content('Logged in!') 
+    visit login_path
+    fill_in 'session_name', with: user.name
+    click_button 'Log in'
+    expect(page).to have_content('Logged in!')
   end
 
   scenario 'show inputs' do
