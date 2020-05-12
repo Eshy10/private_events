@@ -1,8 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe EventAttendee, :type => :model do
-  describe "Associations" do
-    it { should belong_to(:event) }
-    it { should belong_to(:attendee) }  
+  context 'Association' do
+    it "should belong to event" do
+      t = EventAttendee.reflect_on_association(:event)
+      expect(t.macro).to eq(:belongs_to)
+    end
+  it "should belong to attendee" do
+      t = EventAttendee.reflect_on_association(:attendee)
+      expect(t.macro).to eq(:belongs_to)
+    end
   end
 end
