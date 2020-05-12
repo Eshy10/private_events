@@ -14,9 +14,19 @@ RSpec.describe User, :type => :model do
         expect(subject).to_not be_valid
     end
 
-  describe "Associations" do
-    it { should have_many(:created_events) }
-    it { should have_many(:event_attendees) } 
-    it { should have_many(:attending_events) }  
+  describe User do 
+    it "should have many created_events" do 
+      t = User.reflect_on_association(:created_events) 
+      expect(t.macro).to eq(:has_many) 
+    end 
+    it "should have many event_attendees" do 
+      t = User.reflect_on_association(:event_attendees) 
+      expect(t.macro).to eq(:has_many) 
+    end 
+    it "should have many attending_events" do 
+      t = User.reflect_on_association(:attending_events) 
+      expect(t.macro).to eq(:has_many) 
+    end 
   end
+  
 end
