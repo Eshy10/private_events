@@ -1,0 +1,18 @@
+example_id                                 | status | run_time        |
+------------------------------------------ | ------ | --------------- |
+./spec/features/create_event_spec.rb[1:1]  | passed | 0.17235 seconds |
+./spec/features/create_event_spec.rb[1:2]  | passed | 0.14995 seconds |
+./spec/features/show_event_spec.rb[1:1]    | passed | 1.42 seconds    |
+./spec/features/user_login_spec.rb[1:1]    | passed | 0.12377 seconds |
+./spec/features/user_signup_spec.rb[1:1]   | passed | 0.13729 seconds |
+./spec/model/event_attendee_spec.rb[1:1:1] | passed | 0.01657 seconds |
+./spec/model/event_attendee_spec.rb[1:1:2] | passed | 0.01662 seconds |
+./spec/model/event_spec.rb[1:1:1]          | passed | 0.0217 seconds  |
+./spec/model/event_spec.rb[1:2:1]          | passed | 0.01333 seconds |
+./spec/model/event_spec.rb[1:2:2]          | passed | 0.01381 seconds |
+./spec/model/event_spec.rb[1:2:3]          | passed | 0.01101 seconds |
+./spec/model/user_spec.rb[1:1:1]           | passed | 0.01125 seconds |
+./spec/model/user_spec.rb[1:1:2]           | passed | 0.01237 seconds |
+./spec/model/user_spec.rb[1:2:1]           | passed | 0.00905 seconds |
+./spec/model/user_spec.rb[1:2:2]           | passed | 0.00665 seconds |
+./spec/model/user_spec.rb[1:2:3]           | passed | 0.00743 seconds |
